@@ -19,20 +19,22 @@ require('./htmlRoutes.js')(app);
 require('./apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
-// Routes
-// =============================================================
+// // Routes
+// // =============================================================
 
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
+// // Basic route that sends the user first to the AJAX Page
+// app.get("/", function(req, res) {
 
-    res.sendFile(path.join(__dirname, "home.html"));
-});
+//     res.sendFile(path.join(__dirname, "home.html"));
+// });
 
-app.get("/reserve", function(req, res) {
-    console.log('sending survey file');
-    res.sendFile(path.join(__dirname, "survey.html"));
-});
+// app.get("/survey", function(req, res) {
+//     console.log('sending survey file');
+//     res.sendFile(path.join(__dirname, "survey.html"));
+// });
 
 
 // listen on the appropriate port - 8080 if local or the heroku configured port
-app.listen(PORT);
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+});
